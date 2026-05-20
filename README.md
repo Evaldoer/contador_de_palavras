@@ -20,6 +20,7 @@ contador_de_palavras/
 |-- styles.css
 |-- app.js
 |-- dados.csv
+|-- api/index.py
 |-- vercel.json
 |-- calculator.py
 |-- contador.py
@@ -61,7 +62,7 @@ node scripts/build-static.js
    - Output Directory: `dist`
 4. Clique em Deploy.
 
-A configuracao `vercel.json` evita que a Vercel tente instalar dependencias Python e publica somente os arquivos estaticos gerados em `dist`.
+A configuracao `vercel.json` evita instalar dependencias Python, publica os arquivos estaticos gerados em `dist` e tambem possui rotas para funcionar caso a Vercel importe o projeto com preset Python.
 
 ## Scripts Python
 

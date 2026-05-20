@@ -3,5 +3,27 @@
   "buildCommand": "node scripts/build-static.js",
   "outputDirectory": "dist",
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/api"
+    },
+    {
+      "source": "/index.html",
+      "destination": "/api"
+    },
+    {
+      "source": "/styles.css",
+      "destination": "/api"
+    },
+    {
+      "source": "/app.js",
+      "destination": "/api"
+    },
+    {
+      "source": "/dados.csv",
+      "destination": "/api"
+    }
+  ]
 }
