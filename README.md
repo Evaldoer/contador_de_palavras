@@ -69,7 +69,10 @@ A configuracao `vercel.json` evita instalar dependencias Python, publica os arqu
 Os scripts originais continuam disponiveis para estudo local:
 
 ```bash
+pip install -r requirements-local.txt
 python contador.py
 python calculator.py
 python parse.py
 ```
+
+O `requirements.txt` principal fica minimo porque a Vercel le esse arquivo durante o deploy Python. As dependencias dos estudos locais ficam em `requirements-local.txt`.
