@@ -1,114 +1,74 @@
-# 📊 Projeto Python - Análise de Dados
+# Contador de Palavras
 
-Este projeto foi desenvolvido com o objetivo de praticar **Python**, **estruturas de dados** e conceitos básicos de **análise de dados**, incluindo leitura de arquivos, cálculos estatísticos e visualização gráfica.
+Aplicacao web simples para contar palavras, calcular operacoes basicas e visualizar estatisticas do arquivo `dados.csv`.
 
----
+O projeto nasceu como scripts Python de estudo e agora tambem possui uma interface estatica pronta para deploy na Vercel, sem etapa de build e sem dependencias de servidor.
 
-## 🚀 Funcionalidades
+## Funcionalidades
 
-* ✅ Calculadora simples (operações básicas)
-* ✅ Contador de palavras em arquivos de texto
-* ✅ Leitura de dados a partir de arquivo CSV
-* ✅ Cálculo de estatísticas:
+- Contador de palavras com ranking das 10 palavras mais frequentes.
+- Calculadora de operacoes basicas.
+- Leitura do arquivo `dados.csv`.
+- Calculo de media, mediana e desvio padrao.
+- Grafico de dispersao em canvas.
 
-  * Média
-  * Mediana
-  * Desvio padrão
-* ✅ Geração de gráfico de dispersão
+## Estrutura
 
----
-
-## 🛠️ Tecnologias utilizadas
-
-* Python 3.x
-* Pandas
-* Matplotlib
-
----
-
-## 📁 Estrutura do projeto
-
-```
+```text
 contador_de_palavras/
-│
-├── calculator.py   # Calculadora simples
-├── contador.py     # Contador de palavras
-├── parse.py        # Análise de dados CSV
-├── dados.csv       # Base de dados
-├── requirements.txt # Dependências do projeto
-└── README.md       # Documentação
+|-- index.html
+|-- styles.css
+|-- app.js
+|-- dados.csv
+|-- vercel.json
+|-- calculator.py
+|-- contador.py
+|-- parse.py
+|-- requirements.txt
+`-- README.md
 ```
 
----
+## Executar localmente
 
-## ▶️ Como executar
+Como a aplicacao web e estatica, basta servir a pasta do projeto:
 
-### 1. Clone o repositório
-
-```
-git clone https://github.com/Evaldoer/contador_de_palavras.git
+```bash
+python -m http.server 8000
 ```
 
-### 2. Acesse a pasta do projeto
+Depois acesse:
 
-```
-cd contador_de_palavras
-```
-
-### 3. (Opcional) Crie e ative um ambiente virtual
-
-```
-python -m venv venv
-.\venv\Scripts\activate
+```text
+http://localhost:8000
 ```
 
-### 4. Instale as dependências
+## Gerar build local
 
-```
-pip install -r requirements.txt
+O build usado pela Vercel copia apenas os arquivos da aplicacao web para `dist`:
+
+```bash
+node scripts/build-static.js
 ```
 
-### 5. Execute o projeto
+## Deploy na Vercel
 
-```
+1. Envie o repositorio para o GitHub.
+2. Na Vercel, importe o repositorio.
+3. A configuracao do deploy ja esta no `vercel.json`:
+   - Framework Preset: Other
+   - Install Command: `echo No install needed`
+   - Build Command: `node scripts/build-static.js`
+   - Output Directory: `dist`
+4. Clique em Deploy.
+
+A configuracao `vercel.json` evita que a Vercel tente instalar dependencias Python e publica somente os arquivos estaticos gerados em `dist`.
+
+## Scripts Python
+
+Os scripts originais continuam disponiveis para estudo local:
+
+```bash
+python contador.py
+python calculator.py
 python parse.py
 ```
-
----
-
-## 📦 Dependências
-
-Caso não tenha o `requirements.txt`, você pode gerar com:
-
-```
-pip freeze > requirements.txt
-```
-
----
-
-## 📊 Exemplo de saída
-
-O projeto gera estatísticas no terminal e exibe um gráfico de dispersão com base nos dados do arquivo CSV.
-
----
-
-## 🎯 Objetivo do projeto
-
-Este projeto faz parte dos estudos em desenvolvimento Python, com foco em:
-
-* Manipulação de dados
-* Estruturas de dados
-* Integração com bibliotecas externas
-* Boas práticas com Git e GitHub
-
----
-
-## 📌 Autor
-
-**Evaldo Martins Ribeiro**
-
----
-
-## 📄 Licença
-
-Este projeto é de uso educacional.

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contador de Palavras</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Projeto Python adaptado para web</p>
+          <h1>Contador de Palavras</h1>
+          <p class="lead">
+            Conte palavras, veja termos frequentes, calcule operacoes simples e analise dados CSV direto no navegador.
+          </p>
+        </div>
+        <div class="hero-panel" aria-label="Resumo do projeto">
+          <span>Sem build</span>
+          <strong>Pronto para Vercel</strong>
+        </div>
+      </section>
+
+      <section class="workspace" aria-label="Ferramentas">
+        <article class="tool-card">
+          <div class="card-header">
+            <h2>Texto</h2>
+            <span id="wordTotal">0 palavras</span>
+          </div>
+          <textarea id="textInput" rows="9" placeholder="Digite ou cole seu texto aqui..."></textarea>
+          <div class="actions">
+            <button id="countButton" type="button">Contar palavras</button>
+            <button id="clearButton" class="secondary" type="button">Limpar</button>
+          </div>
+          <ol id="wordList" class="result-list" aria-live="polite"></ol>
+        </article>
+
+        <article class="tool-card">
+          <div class="card-header">
+            <h2>Calculadora</h2>
+            <span id="calcResult">Resultado: 0</span>
+          </div>
+          <div class="calculator-grid">
+            <label>
+              Numero 1
+              <input id="firstNumber" type="number" step="any" value="10">
+            </label>
+            <label>
+              Operacao
+              <select id="operation">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+              </select>
+            </label>
+            <label>
+              Numero 2
+              <input id="secondNumber" type="number" step="any" value="5">
+            </label>
+          </div>
+          <button id="calculateButton" type="button">Calcular</button>
+        </article>
+
+        <article class="tool-card wide">
+          <div class="card-header">
+            <h2>Dados CSV</h2>
+            <span>Arquivo: dados.csv</span>
+          </div>
+          <div class="stats-grid">
+            <div>
+              <span>Media col1</span>
+              <strong id="meanValue">-</strong>
+            </div>
+            <div>
+              <span>Mediana col1</span>
+              <strong id="medianValue">-</strong>
+            </div>
+            <div>
+              <span>Desvio padrao col1</span>
+              <strong id="stdValue">-</strong>
+            </div>
+          </div>
+          <canvas id="scatterChart" width="760" height="280" aria-label="Grafico de dispersao entre col1 e col2"></canvas>
+        </article>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
